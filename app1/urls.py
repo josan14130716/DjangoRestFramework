@@ -1,8 +1,8 @@
 from django.urls import path
-from django.conf import settings
-from .views import EmployeeDetail
+from .views import EmployeeDetail, EmployeeInfo
 
 urlpatterns = [
-    path('emp', EmployeeDetail.as_view(), name = 'emp')
+    path('emp/', EmployeeDetail.as_view(), name = 'emp'),
+    path('emp/<int:id>/', EmployeeInfo.as_view())
    
 ]
